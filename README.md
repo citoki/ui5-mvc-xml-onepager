@@ -18,6 +18,3 @@ you want to try out.
 In the script section with controller definition you can enter all the logic.
 
 Some model data can be entered in line 42.
-
-## One pager setup without bower
-Have a look in this branch [ui5-resources-online](https://github.com/citoki/ui5-mvc-xml-onepager/tree/ui5-resources-online)
