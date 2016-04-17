@@ -1,0 +1,24 @@
+{
+  "name": "ui5-mvc-xml-onepager",
+  "description": "UI5 sample application as XML onepager with respect to MVC",
+  "version": "0.0.1",
+  "main": "index.html",
+  "license": "MIT",
+  "author": {
+      "name": "citoki (https://github.com/citoki/)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:citoki/ui5-mvc-xml-onepager.git"
+  },
+  "bugs": {
+   "url": "https://github.com/citoki/ui5-mvc-xml-onepager/issues"
+ },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-openui5": "^0.8.1"
+  }
+}
