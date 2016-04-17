@@ -6,7 +6,7 @@
     <title>MVC - XML one pager</title>
     <script id="sap-ui-bootstrap"
         type="text/javascript"
-        src="/resources/sap-ui-core-dbg.js"
+        src="https://sapui5.netweaver.ondemand.com/resources/sap-ui-core-dbg.js"
         data-sap-ui-theme="sap_bluecrystal"
         data-sap-ui-libs="sap.m"
         data-sap-ui-xx-bindingSyntax="complex">
@@ -18,7 +18,9 @@
         <mvc:View controllerName="local.controller"
             xmlns:mvc="sap.ui.core.mvc"
             xmlns="sap.m">
+
             <Label text="{/labelText}" class="sapUiResponsiveMargin" />
+
         </mvc:View>
     </script>
 
@@ -27,10 +29,13 @@
         sap.ui.controller("local.controller", {
             onInit: function(oEvent) {
                 var oView = this.getView();
+
                 var oDataObject = {
                     labelText : "This is some text."
                 }
+
                 oView.setModel(new sap.ui.model.json.JSONModel(oDataObject));
+
             }
         });
         // instantiate the view

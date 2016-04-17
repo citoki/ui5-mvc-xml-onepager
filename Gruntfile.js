@@ -44,41 +44,6 @@ module.exports = function(grunt) {
                     reload: true
                 }
             }
-        },
-        copy: { // copy all files needed for the deployment into the build/release folder
-            "sap.ui.core": {
-    			files: [
-    				{
-    					cwd: "bower_components/openui5-sap.ui.core/resources",
-    					src: [ "**/*" ],
-    					dots: true,
-    					expand: true,
-    					dest: "resources/"
-    				}
-    			]
-    		},
-    		"sap.m": {
-    			files: [
-    				{
-    					cwd: "bower_components/openui5-sap.m/resources",
-    					src: [ "**/*" ],
-    					dots: true,
-    					expand: true,
-    					dest: "resources/"
-    				}
-    			]
-    		},
-    		"bluecrystal": {
-    			files: [
-    				{
-    					cwd: "bower_components/openui5-bluecrystal/resources",
-    					src: [ "**/*" ],
-    					dots: true,
-    					expand: true,
-    					dest: "resources/"
-    				}
-    			]
-    		},
         }
     }); // grunt init-config
 
@@ -87,13 +52,6 @@ module.exports = function(grunt) {
           grunt.loadNpmTasks(dependency);
         }
     });
-
-    // after bower install copy the resources from the bower folder into the resources folder
-    grunt.registerTask("copyresources", [
-        "copy:sap.ui.core",
-        "copy:sap.m",
-        "copy:bluecrystal"
-    ]);
 
     // Default task(s).
     grunt.registerTask("default", ["openui5_connect", "watch"]);
