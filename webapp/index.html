@@ -6,42 +6,37 @@
     <title>MVC - XML one pager</title>
     <script id="sap-ui-bootstrap"
         type="text/javascript"
-        src="/resources/sap-ui-core.js"
+        src="/resources/sap-ui-core-dbg.js"
         data-sap-ui-theme="sap_bluecrystal"
         data-sap-ui-libs="sap.m"
         data-sap-ui-xx-bindingSyntax="complex">
     </script>
 
+    <script src="//localhost:9000/livereload.js?snipver=1"></script>
+
     <script id="view1" type="sapui5/xmlview">
-        <mvc:View
-            controllerName="local.controller"
+        <mvc:View controllerName="local.controller"
             xmlns:mvc="sap.ui.core.mvc"
             xmlns="sap.m">
-
-
-
+            <Label text="{/labelText}" class="sapUiResponsiveMargin" />
         </mvc:View>
     </script>
 
     <script>
         // controller definition
         sap.ui.controller("local.controller", {
-
             onInit: function(oEvent) {
-
+                var oView = this.getView();
+                var oDataObject = {
+                    labelText : "This is some text."
+                }
+                oView.setModel(new sap.ui.model.json.JSONModel(oDataObject));
             }
         });
-
         // instantiate the view
         var oView = sap.ui.xmlview({
             viewContent: jQuery('#view1').html()
         });
-
-        // model creation
-        oView.setModel(new sap.ui.model.json.JSONModel({
-            // enter your model data
-        }));
-
         // assign this view to the HTML body
         oView.placeAt('content');
     </script>
