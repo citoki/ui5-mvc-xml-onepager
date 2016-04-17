@@ -10,8 +10,8 @@ module.exports = function(grunt) {
                 options: {
                     protocol: "https",
                     port: 8000,
-                    useAvailablePort: true
-                    // livereload: 9000
+                    useAvailablePort: true,
+                    livereload: 9000
                 }
             }
         },
@@ -20,24 +20,19 @@ module.exports = function(grunt) {
         "openui5_connect": {
             server: {
                 options: {
-                    appresources: ["webapp", "themeroot"],
+                    appresources: ["webapp"],
                     resources: "resources",
-                    //testresources: "test-resources"
                 }
             }
         },
         // watch certain files or directories
         watch: {
             webapp: {
-                // files: ["webapp/**/*.xml", "webapp/**/*.html", "webapp/**/*.json", "webapp/**/*.properties"],
                 files: ["webapp/**/*"],
                 options: {
-                    // nospawn: false,      //default: true
-                    // interrupt: true,     //default: false
-                    // debounceDelay: 1000      //default: 500
                     livereload: {
-                        // host: "localhost",
-                        // port: 9000,
+                        host: "localhost",
+                        port: 9000,
                         key: grunt.file.read("node_modules/grunt-contrib-connect/tasks/certs/server.key"),
                         cert: grunt.file.read("node_modules/grunt-contrib-connect/tasks/certs/server.crt")
                     }
